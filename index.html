@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Second Task</title>
+
+  <!-- ===============CSS================ -->
+
+  <style>
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+  display: flex;
+  justify-content: center;
+  padding: 40px;
+  margin: 0;
+}
+
+.container {
+  background: white;
+  padding: 30px 20px;
+  width: 400px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  color: #f06292;
+  text-align: center;
+  position: relative;
+  margin-bottom: 30px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+h2::before,
+h2::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 30%;
+  height: 1px;
+  background: #ccc;
+}
+
+h2::before {
+  left: 0;
+}
+
+h2::after {
+  right: 0;
+}
+
+.box {
+  border: 2px solid #ddd;
+  padding: 16px;
+  position: relative;
+  margin-bottom: 30px;
+}
+
+.box.popular {
+  border-color: #f06292;
+}
+
+.box.popular::before {
+  content: "MOST POPULAR";
+  position: absolute;
+  background: #f06292;
+  color: #fff;
+  top: -12px;
+  right: 20px;
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.row-left {
+  display: flex;
+  align-items: center;
+}
+
+input[type="radio"] {
+  width: 18px;
+  height: 18px;
+  accent-color: #f06292;
+  margin-right: 10px;
+}
+
+.badge {
+  background: #f06292;
+  color: white;
+  font-size: 11px;
+  padding: 3px 6px;
+  border-radius: 4px;
+  margin-left: 8px;
+}
+
+.price-block {
+  text-align: right;
+}
+
+.price-block .price {
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.price-block .real-price {
+  text-decoration: line-through;
+  font-size: 13px;
+  color: #aaa;
+}
+
+.subtext {
+  font-size: 13px;
+  color: #777;
+  margin-top: 4px;
+}
+
+.dropdowns {
+  display: flex;
+  flex-direction: column;
+  margin-top: 12px;
+  gap: 10px;
+}
+
+.dropdown-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.dropdown-row label {
+  width: 20px;
+}
+
+select {
+  padding: 4px;
+  font-size: 14px;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 16px;
+}
+
+.footer .delivery {
+  color: #f06292;
+}
+
+.cart {
+  width: 100%;
+  padding: 12px;
+  background: #f06292;
+  color: white;
+  font-size: 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.cart:hover {
+  background: #e6517b;
+}
+  </style>
+</head>
+<body>
+
+    <!-- ==========header============= -->
+
+  <div class="container">
+    <h2>YAY! It’s BOGO</h2>
+
+    <!-- ===============main=============== -->
+
+    <div class="box">
+      <div class="row">
+        <div class="row-left">
+          <input type="radio" name="unit" checked />
+          <div>
+            <div><strong>1 Unit</strong> <span class="badge">10% Off</span></div>
+            <div class="subtext">Standard Price</div>
+          </div>
+        </div>
+        <div class="price-block">
+          <div class="price">$10.00 USD</div>
+          <div class="real-price">$24.00 USD</div>
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="box main">
+      <div class="row">
+        <div class="row-left">
+          <input type="radio" name="unit" />
+          <div>
+            <div><strong>2 Unit</strong> <span class="badge">20% Off</span></div>
+          </div>
+        </div>
+        <div class="price-block">
+          <div class="price">$18.00 USD</div>
+          <div class="real-price">$24.00 USD</div>
+        </div>
+      </div>
+      <div class="dropdowns">
+        <div class=" dropdown-row">
+            <!-- <h6 style="color: black;">Size</h6> -->
+            <!-- <h6 style="color: black">Color</h6> -->
+          <label>#1</label>
+          <select><option>S</option></select>
+          <select><option>Black</option></select>
+        </div>
+        <div class=" dropdown-row">
+          <label>#2</label>
+          <select><option>S</option></select>
+          <select><option>Colour</option></select>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="box">
+      <div class="row">
+        <div class="row-left">
+          <input type="radio" name="unit" />
+          <div><strong>3 Unit</strong> <span class=" badge">30% Off</span></div>
+        </div>
+        <div class="price-block">
+          <div class=" price">$24.00 USD</div>
+          <div class="real-price">$24.00 USD</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- =============footer============= -->
+
+    <div class="footer">
+      <div class="delivery">Free Delivery</div>
+      <div class="total">Total : $18.00 USD</div>
+    </div>
+
+    <button class="cart">+ Add to Cart</button>
+  </div>
+</body>
+</html>
